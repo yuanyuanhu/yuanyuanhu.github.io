@@ -79,4 +79,3 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
-theme: jekyll-theme-slate
