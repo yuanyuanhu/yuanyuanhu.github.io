@@ -70,6 +70,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-segfault" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/segfault/" class="article-date">
+  <time datetime="2016-05-31T14:46:34.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/票砸/">票砸</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/segfault/">segfault</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天上班遇到了一个问题，就是php的一个错误：segmentation fault。我是第一次遇到，面对这个单词的时候，还陌生，总是发音完全——“segmentation”，但是有经验的人会简称为“segfault”。 比如这个链接描述的：<a href="https://github.com/ezyang/htmlpurifier/issues/79" target="_blank" rel="noopener">https://github.com/ezyang/htmlpurifier/issues/79</a> 。 那就分享一个库：htmlpurifier。 我在github上问了这个作者为什么会造成segfault，结果是因为php版本的原因，php语言本身的bug，也是第一次意识到了php版本低所造成的问题。在github上第一次有开源作者答复我的issue，开心。介绍一下htmlpurifier的基本用法：</p>
+<ol>
+<li>基本用法：/** * 过滤掉html里的class属性，没有协议的href属性 <em> @param string $html 输入的html </em> @return string 输出的html */ public function checkMore($html) { include_once ‘htmlpurifier/HTMLPurifier.auto.php’; $config = HTMLPurifier_Config::createDefault();$config-&gt;set(‘Attr.AllowedClasses’,’someClassesNotExists’); $config-&gt;set(‘AutoFormat.Linkify’,true);$purifier = new HTMLPurifier($config);$html = $purifier-&gt;purify($html);return $html; }</li>
+<li>其中的‘.’是什么意思：</li>
+</ol>
+<p>$config-&gt;set(‘HTML.Allowed’, $value);和$config-&gt;set(‘HTML’, ‘Allowed’, $value);是一个意思。 具体细节自己去看。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zengxiaoluan.com/2016/05/31/segfault/" data-id="cjkghulo1007hmeacmxvcfjio" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程思想/">编程思想</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-e3-80-8a-e7-a4-be-e4-bc-9a-e5-a5-91-e7-ba-a6-e8-ae-ba-e3-80-8b-e5-92-8c-e3-80-8a-e9-87-91-e8-9e-8d-e7-9a-84-e9-80-bb-e8-be-911-e3-80-8b" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/30/e3-80-8a-e7-a4-be-e4-bc-9a-e5-a5-91-e7-ba-a6-e8-ae-ba-e3-80-8b-e5-92-8c-e3-80-8a-e9-87-91-e8-9e-8d-e7-9a-84-e9-80-bb-e8-be-911-e3-80-8b/" class="article-date">
@@ -101,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/30/e3-80-8a-e7-a4-be-e4-bc-9a-e5-a5-91-e7-ba-a6-e8-ae-ba-e3-80-8b-e5-92-8c-e3-80-8a-e9-87-91-e8-9e-8d-e7-9a-84-e9-80-bb-e8-be-911-e3-80-8b/" data-id="cjkggneno001nc7ac9s5wsz5q" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/30/e3-80-8a-e7-a4-be-e4-bc-9a-e5-a5-91-e7-ba-a6-e8-ae-ba-e3-80-8b-e5-92-8c-e3-80-8a-e9-87-91-e8-9e-8d-e7-9a-84-e9-80-bb-e8-be-911-e3-80-8b/" data-id="cjkghulli001nmeactipd2rcs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/29/lazyload-js/" data-id="cjkggnepk0065c7acqzblzj28" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/29/lazyload-js/" data-id="cjkghulni0067meac7abvi2zp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/27/web-vision-designer/" data-id="cjkggneqh0089c7ac0s9jq6dy" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/27/web-vision-designer/" data-id="cjkghuloc008bmeac8ffwqpf2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -242,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/26/e5-be-ae-e4-bf-a1/" data-id="cjkggneob0032c7ac20djrlqd" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/26/e5-be-ae-e4-bf-a1/" data-id="cjkghulm50032meacjlqwtsfk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/26/e6-95-b0-e6-8d-ae-e6-97-b6-e4-bb-a3/" data-id="cjkggneom003uc7acoh4wz2qy" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/26/e6-95-b0-e6-8d-ae-e6-97-b6-e4-bb-a3/" data-id="cjkghulmh003umeacyu1odskm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/26/e5-9b-be-e4-b8-aa-e5-90-89-e5-88-a9-e3-80-81-e5-9b-be-e4-b8-aa-e5-90-89-e5-88-a9/" data-id="cjkggneo7002qc7ace08leacx" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/26/e5-9b-be-e4-b8-aa-e5-90-89-e5-88-a9-e3-80-81-e5-9b-be-e4-b8-aa-e5-90-89-e5-88-a9/" data-id="cjkghulm1002qmeacymd0au25" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/25/e8-a6-81-e4-b8-8d-e8-a6-81-e5-bc-80-e9-bb-91-ef-bc-9f/" data-id="cjkggnep1004rc7acg3pq3kdo" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/25/e8-a6-81-e4-b8-8d-e8-a6-81-e5-bc-80-e9-bb-91-ef-bc-9f/" data-id="cjkghulmv004rmeac74nn25fr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/25/e6-96-b0-e9-97-bb/" data-id="cjkggneoo003yc7ac0cxd1cxe" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/25/e6-96-b0-e9-97-bb/" data-id="cjkghulmj003ymeacav24en39" class="article-share-link">Share</a>
       
       
     </footer>
@@ -461,48 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/25/e6-b4-bb-e5-8a-a8/" data-id="cjkggneou004dc7acdj7ujkx7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-e8-bf-99-e6-9b-b4-e5-83-8f-e4-bb-80-e4-b9-88-ef-bc-9f" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/25/e8-bf-99-e6-9b-b4-e5-83-8f-e4-bb-80-e4-b9-88-ef-bc-9f/" class="article-date">
-  <time datetime="2016-05-25T03:07:40.000Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/huhuの文章/">huhuの文章</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/e8-bf-99-e6-9b-b4-e5-83-8f-e4-bb-80-e4-b9-88-ef-bc-9f/">这更像什么？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在是七月二十二，我和我爸、我弟在老家，没有被子和应数的风扇。空气一到傍晚就凉了，荒废了几天没有敲过代码，晚上写了点，已到凌晨。 <a href="http://www.goedkoopairmaxnike.nl/nike-air-max-2017/nike-air-max-2017-heren.html" target="_blank" rel="noopener">Nike Air Max 2017 Heren Goedkoop</a> 我弟夸张的梦话，我爸时有时无的呼噜声，都导致我无法入睡。 <a href="http://www.nikeairmax2017.nl/nike-air-max-dame-goedkoop/nike-air-max-90-vt-dames.html" target="_blank" rel="noopener">Nike Air Max 90 VT Dames</a> 只有一张床单和一个短的被子，我很冷，但是还是让给了我弟。 <a href="http://www.goedkoopairmaxnike.nl/nike-air-max-2015/air-max-2015-zwart-oranje.html" target="_blank" rel="noopener">Air Max 2015 Zwart Oranje Goedkoop</a> 我一个人坐在木椅上，看着天空，天空没有月和星辰，旁边有条灰狗，一直诡异的盯着山间的小路，听着南山南，感觉心弦再一次被挑动（这也归功于我没有将这首歌听到腻），听到快哭了，觉得时机到了，我想写一篇文章，为将要到来的七个月纪念日。是去年吧，那时候还没遇到你，我看了一部电影叫《安东尼陪你度过漫长岁月》。镜头很慢，演员很投入，每个笑容，每个眼神（最清晰记得那些眼神，比海上钢琴师那个经典的眼神让我更相信爱情），像真的一样，话语很深入人心，搁其他谁都会演得矫情，我没有像往常看国产情感戏一样跳戏。我信了他们的故事，一条叫Alice的鲸鱼，找不到与自己相同声音频率的伙伴，多像这世上的人啊。 <a href="http://www.goedkoopairmaxnike.nl/nike-running-goedkoop/nike-free-3-0-v2.html" target="_blank" rel="noopener">Nike Free 3.0 V2 Goedkoop</a> 像这部电影，我有时也会认为，我们的故事也很美，就像一首诗。可惜的是，我已失去用矫情而淡雅的文笔来描述这样的诗意。 <a href="http://www.nikeairmax2017.nl/nike-air-max-heren-goedkoop/nike-air-max-90-hyperfuse-heren.html" target="_blank" rel="noopener">Nike Air Max 90 Hyperfuse Heren</a> 你有，但是我是Alice，我之于你，不是赵雷的南方姑娘，不是马曲页的傲寒，不是宋冬野的董小姐。你曾经用质问的语气问我为什么觉得自己喜欢你，什么是爱。我的那些回答在你看来很幼稚，很可笑，很值得羞辱一番吧，但我自己仍然不觉得。在我看来，这样的质问像过期的或发霉的食物，让人嗤之以鼻，就如一切美好的爱情遇上了你也喜欢她这样的情节，变成一滩烂泥，腐烂，发臭。但你问了，我就认真对待了，你怎么想，我已经控制不了。我记得以前有一个人很喜欢王小波这句话：你好啊，李银河！有时候把程序员的那句“hello world”放在一起竟然会觉出默契。我现在也觉得这句话很美，比世上所有的情话都美。美人鱼里面一句用来搞笑的一句话被我无意中刻在心上了，“多么不怕世俗的眼光”。我是个俗人，在乎所有关于我的话和事。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/25/e8-bf-99-e6-9b-b4-e5-83-8f-e4-bb-80-e4-b9-88-ef-bc-9f/" data-id="cjkggnep50052c7achteimgri" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/25/e6-b4-bb-e5-8a-a8/" data-id="cjkghulmp004dmeacom456cgn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -569,6 +576,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/05/go/">go</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/05/游泳/">游泳</a>
           </li>
         
@@ -582,10 +593,6 @@
         
           <li>
             <a href="/2018/04/10/sketch-e6-96-87-e4-bb-b6-e4-b8-8epsd-e6-96-87-e4-bb-b6-e4-ba-92-e8-bd-ac/">sketch文件与PSD文件互转</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/03/e7-94-a8mac-e7-9a-84-e6-97-b6-e5-80-99-e6-9c-89-e5-93-aa-e4-ba-9b-e6-93-8d-e4-bd-9c-e8-83-bd-e5-a4-9f-e6-8f-90-e9-ab-98-e6-95-88-e7-8e-87/">用Mac的时候有哪些操作能够提高效率</a>
           </li>
         
       </ul>

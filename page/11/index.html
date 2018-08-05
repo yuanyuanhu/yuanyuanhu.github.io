@@ -70,6 +70,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-how-to-set-up-their-own-web-site-can-be-subscribed-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/04/how-to-set-up-their-own-web-site-can-be-subscribed-2/" class="article-date">
+  <time datetime="2017-03-04T13:53:06.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/huhuの文章/">huhuの文章</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/how-to-set-up-their-own-web-site-can-be-subscribed-2/">怎么设置自己网站能被订阅（2）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="WordPress的feed类型"><a href="#WordPress的feed类型" class="headerlink" title="WordPress的feed类型"></a>WordPress的feed类型</h4><p>WordPress 包含了多种类型的Feed地址，它们都可以通过 <a href="http://codex.wordpress.org/Template_Tags/bloginfo" target="_blank" rel="noopener">bloginfo()</a> 来调用，以下就是各种类型Feed地址的调用方法： <a href="http://web.resource.org/rss/1.0/" target="_blank" rel="noopener">RDF/RSS 1.0 feed</a>地址</p>
+<p>1</p>
+<p>&lt;?php bloginfo(‘rdf_url’); ?&gt;</p>
+<p><a href="http://www.rssboard.org/rss-0-9-2" target="_blank" rel="noopener">RSS 0.92 feed</a>地址</p>
+<p>1</p>
+<p>&lt;?php bloginfo(‘rss_url’); ?&gt;</p>
+<p><a href="http://www.rssboard.org/rss-specification" target="_blank" rel="noopener">RSS 2.0 feed</a>地址</p>
+<p>1</p>
+<p>&lt;?php bloginfo(‘rss2_url’); ?&gt;</p>
+<p>Atom feed地址</p>
+<p>1</p>
+<p>&lt;?php bloginfo(‘atom_url’); ?&gt;</p>
+<p>评论RSS 2.0 feed 地址</p>
+<p>1</p>
+<p>&lt;?php bloginfo(‘comments_rss2_url’); ?&gt;</p>
+<p>前面4种Feeds是对内容的变更的订阅源，一般情况下，我们常用的是 RSS 2.0 的Feed地址，最后一种是WordPress整站的评论更新的Feed地址，用来给读者订阅网站的评论的。 当然，如果你想让读者订阅单独一篇文章的评论，你可以使用下面的函数来获取单一文章的评论订阅地址，这个函数通常添加在主题的 single.php 文件：</p>
+<p>1</p>
+<p>&lt;?php post_comments_feed_link(‘RSS 2.0’); ?&gt;</p>
+<h4 id="添加RSS订阅链接的方法"><a href="#添加RSS订阅链接的方法" class="headerlink" title="添加RSS订阅链接的方法"></a>添加RSS订阅链接的方法</h4><p>如果你想为你的网站添加一个RSS订阅地址，可以使用类似下面的代码（一般是添加到主题的 header.php 、sidebar.php 或 footer.php）：</p>
+<p>1</p>
+<p><a href="<?php bloginfo('rss2_url'); ?>" title="RSS订阅本站">订阅本站</a></p>
+<p>或者你可以使用一个订阅图标来替换“订阅本地”这几个字，可以使用类似下面的代码：</p>
+<p>1</p>
+<p><a href="<?php bloginfo('rss2_url'); ?>" title="RSS订阅本站"><img src="图标的地址" alt="RSS Feed" title="RSS Feed"></a></p>
+<h3 id="订阅WordPress站点（For-网站读者）"><a href="#订阅WordPress站点（For-网站读者）" class="headerlink" title="订阅WordPress站点（For 网站读者）"></a>订阅WordPress站点（For 网站读者）</h3><p>如果你想订阅一个WordPress站点，而这个站点上没有显示订阅链接或图标，如何订阅呢？或者你只想订阅这个网站的某一部分的内容，又该如何？ WordPress有一个固定链接（permalinks）设置功能，可以设置网站的链接样式。使用不同的链接样式，网站的Feed地址就可能不同。 我们可以将固定链接分为“默认结构”和“其他结构”两类，之所以这样分，是因为“默认结构”和“其他结构”是产生两种不同的feed地址<strong>：“默认结构”一般的feed地址是在后面添加 <em>&amp;feed=rss2</em> ，其他结构一般在链接后面加 <em>/feed/</em></strong> 。 只要你打开一篇WordPress文章，链接地址中含有[ <em>?p=</em> ]字样的，说明是“默认结构”，反之为“其他结构”。 下面是各种类型的订阅地址样例，你只需将地址添加到你的feed阅读器中订阅即可。 <strong>1.订阅整站的文章</strong> 默认结构：<a href="https://www.wpdaxue.com/?feed=rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?feed=rss2</a> 其他结构：<a href="https://www.wpdaxue.com/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/feed/</a> <strong>2.订阅某个分类（category）的文章</strong> 默认结构的分类地址一般为 <em>/cat=分类id</em> ，其他结构一般为 <em>/category/分类别名(slug)</em> （有些使用插件删除了 <em>/category ,</em>比如 WordPress大学就如此，<a href="https://www.wpdaxue.com/wp-no-category-base.html" target="_blank" rel="noopener">删除方法</a>） 比如分类“WordPress主题”的id为 3 ，别名为 themes 默认结构：<a href="https://www.wpdaxue.com/?cat=3&amp;feed=rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?cat=3&amp;feed=rss2</a> 其他结构：<a href="https://www.wpdaxue.com/category/themes/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/category/themes/feed/</a> <strong>3.订阅某个标签（tag）的文章</strong> 默认结构的标签地址为 <em>/?tag=标签名</em> ，其他结构为 <em>/tag/标签名</em> ，比如标签为“phpmyadmin”的feed地址 默认结构：<a href="https://www.wpdaxue.com/?tag=phpmyadmin&amp;feed=rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?tag=phpmyadmin&amp;feed=rss2</a> 其他结构：<a href="https://www.wpdaxue.com/tag/phpmyadmin/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/tag/phpmyadmin/feed/</a> <strong>4.订阅某个搜索结果的文章</strong> 比如搜索词为“phpmyadmin”的feed地址 默认结构：<a href="https://www.wpdaxue.com/?s=phpmyadmin&amp;feed=rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?s=phpmyadmin&amp;feed=rss2</a> 其他结构：<a href="https://www.wpdaxue.com/search/phpmyadmin/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/search/phpmyadmin/feed/</a> <strong>5.订阅某个作者的文章</strong> 默认结构的作者页面链接为 <em>/?author=作者id</em> ，其他结构为 <em>/author/作者用户名</em> 默认结构：<a href="https://www.wpdaxue.com/?author=1&amp;feed=rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?author=1&amp;feed=rss2</a> 其他结构：<a href="https://www.wpdaxue.com/author/cmhello/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/author/cmhello/feed/</a> <strong>6.订阅整站的评论</strong> 默认结构：<a href="https://www.wpdaxue.com/?feed=comments-rss2" target="_blank" rel="noopener">https://www.wpdaxue.com/?feed=comments-rss2</a> 其他结构：<a href="https://www.wpdaxue.com/comments/feed/" target="_blank" rel="noopener">https://www.wpdaxue.com/comments/feed/</a> <strong>7.订阅单篇文章的评论</strong> 默认结构的feed地址为 <em>/?feed=rss2&amp;p=文章id</em> ，其他结构为 <em>文章地址后加/feed</em> 默认结构：<a href="https://www.wpdaxue.com/?feed=rss2&amp;p=622" target="_blank" rel="noopener">https://www.wpdaxue.com/?feed=rss2&amp;p=622</a> 其他结构：<a href="https://www.wpdaxue.com/do-not-rush-to-upgrade-wordpress-3-5.html/feed" target="_blank" rel="noopener">https://www.wpdaxue.com/do-not-rush-to-upgrade-wordpress-3-5.html/feed</a> 参考资料：<a href="http://codex.wordpress.org/WordPress_Feeds" target="_blank" rel="noopener">http://codex.wordpress.org/WordPress_Feeds</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zengxiaoluan.com/2017/03/04/how-to-set-up-their-own-web-site-can-be-subscribed-2/" data-id="cjkghulnc005tmeacdoudmjn9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-know-almost-an-answer" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/04/know-almost-an-answer/" class="article-date">
@@ -102,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2017/03/04/know-almost-an-answer/" data-id="cjkggnepj0063c7acbc3o3gb0" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2017/03/04/know-almost-an-answer/" data-id="cjkghulng0065meacu8hwhbrm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2017/03/01/win10-modify-the-picture-by-default-open/" data-id="cjkggneqo008pc7acvufzqrx1" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2017/03/01/win10-modify-the-picture-by-default-open/" data-id="cjkghuloj008rmeactrie29ch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/11/27/e4-bf-ae-e5-9b-be-e7-ac-ac-e4-b8-89-e6-b3-a2/" data-id="cjkggnenz0028c7ackg64embs" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/11/27/e4-bf-ae-e5-9b-be-e7-ac-ac-e4-b8-89-e6-b3-a2/" data-id="cjkghullt0028meacgyxx7v1p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/11/27/what-are-the-very-domestic-design-sense-of-app/" data-id="cjkggneqk008hc7actjgft3rm" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/11/27/what-are-the-very-domestic-design-sense-of-app/" data-id="cjkghulof008jmeackykewalm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/09/19/e6-96-87-e7-ab-a0-e7-a7-bb-e6-ad-a5/" data-id="cjkggneon003wc7ac9qxpaqsk" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/09/19/e6-96-87-e7-ab-a0-e7-a7-bb-e6-ad-a5/" data-id="cjkghulmi003wmeac1rx3cbr4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/08/01/e6-88-91-e7-9a-84-e5-b0-8f-e5-ad-a9/" data-id="cjkggneoj003kc7acrje47xj7" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/08/01/e6-88-91-e7-9a-84-e5-b0-8f-e5-ad-a9/" data-id="cjkghulmd003kmeacfcmp53zb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/08/01/e5-b0-8f-e5-90-b5-e6-9e-b6/" data-id="cjkggneoa002zc7accc7fluas" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/08/01/e5-b0-8f-e5-90-b5-e6-9e-b6/" data-id="cjkghulm4002zmeacll8agfsn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/07/04/aaoeaaaeaeoecascoeaioeaczaoeaefaae/" data-id="cjkggnen7000ic7accl0qwo0d" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/07/04/aaoeaaaeaeoecascoeaioeaczaoeaefaae/" data-id="cjkghulky000imeacuuxdvg32" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,57 +506,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/06/14/e4-ba-94-e6-9c-88-e5-85-ad-e6-9c-88/" data-id="cjkggnens001xc7acn6qv738e" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/06/14/e4-ba-94-e6-9c-88-e5-85-ad-e6-9c-88/" data-id="cjkghullm001xmeacz9e6miew" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-segfault" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/31/segfault/" class="article-date">
-  <time datetime="2016-05-31T14:46:34.000Z" itemprop="datePublished">2016-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/票砸/">票砸</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/31/segfault/">segfault</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天上班遇到了一个问题，就是php的一个错误：segmentation fault。我是第一次遇到，面对这个单词的时候，还陌生，总是发音完全——“segmentation”，但是有经验的人会简称为“segfault”。 比如这个链接描述的：<a href="https://github.com/ezyang/htmlpurifier/issues/79" target="_blank" rel="noopener">https://github.com/ezyang/htmlpurifier/issues/79</a> 。 那就分享一个库：htmlpurifier。 我在github上问了这个作者为什么会造成segfault，结果是因为php版本的原因，php语言本身的bug，也是第一次意识到了php版本低所造成的问题。在github上第一次有开源作者答复我的issue，开心。介绍一下htmlpurifier的基本用法：</p>
-<ol>
-<li>基本用法：/** * 过滤掉html里的class属性，没有协议的href属性 <em> @param string $html 输入的html </em> @return string 输出的html */ public function checkMore($html) { include_once ‘htmlpurifier/HTMLPurifier.auto.php’; $config = HTMLPurifier_Config::createDefault();$config-&gt;set(‘Attr.AllowedClasses’,’someClassesNotExists’); $config-&gt;set(‘AutoFormat.Linkify’,true);$purifier = new HTMLPurifier($config);$html = $purifier-&gt;purify($html);return $html; }</li>
-<li>其中的‘.’是什么意思：</li>
-</ol>
-<p>$config-&gt;set(‘HTML.Allowed’, $value);和$config-&gt;set(‘HTML’, ‘Allowed’, $value);是一个意思。 具体细节自己去看。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zengxiaoluan.com/2016/05/31/segfault/" data-id="cjkggneq6007fc7acycqy0u7v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程思想/">编程思想</a></li></ul>
-
     </footer>
   </div>
   
@@ -556,6 +573,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/05/go/">go</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/05/游泳/">游泳</a>
           </li>
         
@@ -569,10 +590,6 @@
         
           <li>
             <a href="/2018/04/10/sketch-e6-96-87-e4-bb-b6-e4-b8-8epsd-e6-96-87-e4-bb-b6-e4-ba-92-e8-bd-ac/">sketch文件与PSD文件互转</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/03/e7-94-a8mac-e7-9a-84-e6-97-b6-e5-80-99-e6-9c-89-e5-93-aa-e4-ba-9b-e6-93-8d-e4-bd-9c-e8-83-bd-e5-a4-9f-e6-8f-90-e9-ab-98-e6-95-88-e7-8e-87/">用Mac的时候有哪些操作能够提高效率</a>
           </li>
         
       </ul>
