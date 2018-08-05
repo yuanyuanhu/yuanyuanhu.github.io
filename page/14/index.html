@@ -5,17 +5,21 @@
   
 
   
-  <title>Hexo</title>
+  <title>胡胡圈圈的成长历程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/14/index.html">
-<meta property="og:site_name" content="Hexo">
+  <meta name="description" content="我是一个设计师">
+<meta name="keywords" content="插画，设计，UI">
+<meta property="og:type" content="website">
+<meta property="og:title" content="胡胡圈圈的成长历程">
+<meta property="og:url" content="https://zengxiaoluan.com/page/14/index.html">
+<meta property="og:site_name" content="胡胡圈圈的成长历程">
+<meta property="og:description" content="我是一个设计师">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="胡胡圈圈的成长历程">
+<meta name="twitter:description" content="我是一个设计师">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="胡胡圈圈的成长历程" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,8 +38,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">胡胡圈圈的成长历程</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我学习我快乐</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -54,13 +62,62 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zengxiaoluan.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-gitignore-e6-96-87-e4-bb-b6-e7-9a-84-e4-bd-9c-e7-94-a8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/gitignore-e6-96-87-e4-bb-b6-e7-9a-84-e4-bd-9c-e7-94-a8/" class="article-date">
+  <time datetime="2016-05-06T15:18:22.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/huhuの文章/">huhuの文章</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/gitignore-e6-96-87-e4-bb-b6-e7-9a-84-e4-bd-9c-e7-94-a8/">.gitignore文件的作用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在团队开发中，不是所有的文件都需要共享的，比如数据库配置文件。你和别人在本地开发时，数据库密码可能会不一样，生产环境和测试环境的数据库密码也会不一样。这时<code>.gitignore</code>文件就可以帮你忽略这些更新，比如在<code>.gitignore</code>文件里加入这么一行：</p>
+<blockquote>
+<p><code>database.config</code></p>
+</blockquote>
+<p>来忽略你的数据库配置。 另外再值得一提的是，我们一般会配置一些常量，这时最好将数据库常量和其它常量分开，因为上面就提到数据库连接的问题了。 <a href="http://www.nikeairmax2017.nl/nike-air-max-2017-heren-dame-lovers-zwart-wit.html" target="_blank" rel="noopener">Nike AIR Max 2017 Dames Zwart Wit</a> 笔者当然经历过调试bug很久，最后发现是<code>git pull</code>下来后数据库常量值变了的苦逼情况。 来看看.gitignore文件的匹配模式是怎样的？</p>
+<blockquote>
+<p>空白行不会匹配任何文件，所以一般为了可读性作为分隔符。 <a href="http://www.goedkoopairmaxnike.nl/nike-air-max-2016/air-max-2016-dames.html" target="_blank" rel="noopener">Air Max 2016 Dames Goedkoop</a> #开头表示注释一行。 连续的两个<code>**</code>号匹配一切文件夹，<code>**/foo/bar</code>匹配一切foo下的bar文件夹，<code>abc/**</code>匹配abc的一切文件和文件夹，但是这些匹配都是相对于当前的.gitignore文件位置来说的。 <code>a/**/b</code>匹配<code>a/b</code>, <code>a/x/b</code>, <code>a/x/y/b。 [Air Max 2016 Heren Goedkoop](http://www.goedkoopairmaxnike.nl/nike-air-max-2016/air-max-2016-heren.html)</code> <code>/*.c</code>会匹配<code>cat-file.c</code>，但是不会匹配<code>mozilla-sha1/sha1.c</code>。 <a href="http://www.goedkoopairmaxnike.nl/nike-running-goedkoop/nike-roshe-run.html" target="_blank" rel="noopener">Nike Roshe Run Goedkoop</a> <code>/* !/foo /foo/* !/foo/bar</code> 这个感叹号的意思可以看做是不包括，它是对上一条规则的重新定义，比如/*忽略一切文件和文件夹，但是!/foo表示不忽略foo里面的文件和文件夹。 <a href="http://www.goedkoopairmaxnike.nl/nike-running-goedkoop/nike-free-5-0-v4.html" target="_blank" rel="noopener">Nike Free 5.0 V4 Goedkoop</a></p>
+</blockquote>
+<p>最后我们不要忘记在<code>.git/info/exclude</code>文件里也是添加忽略文件的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zengxiaoluan.com/2016/05/06/gitignore-e6-96-87-e4-bb-b6-e7-9a-84-e4-bd-9c-e7-94-a8/" data-id="cjkgfzmm5005f72acpmfaf5q2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-mobile-detect-php" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -93,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/06/mobile-detect-php/" data-id="cjkgf67dr006e26acbdz7ormf" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/06/mobile-detect-php/" data-id="cjkgfzmmk006f72acxzvskjsq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/03/css-interesting-selector/" data-id="cjkgf67bo001g26ac2qsazrlc" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/03/css-interesting-selector/" data-id="cjkgfzmkj001h72ac3ke5jsx0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/03/e5-88-9d-e5-ad-a6ps-e7-ac-94-e8-ae-b0/" data-id="cjkgf67c6002g26acm0xm1k79" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/03/e5-88-9d-e5-ad-a6ps-e7-ac-94-e8-ae-b0/" data-id="cjkgfzmkz002j72acov4mpi8a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PS/">PS</a></li></ul>
@@ -291,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/02/e5-85-b3-e4-ba-8e-e5-8d-b0-e8-b1-a1-e7-ac-94-e8-ae-b0sdk-e7-9a-84-e9-97-ae-e9-a2-98/" data-id="cjkgf67c3002926ac250xyuic" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/02/e5-85-b3-e4-ba-8e-e5-8d-b0-e8-b1-a1-e7-ac-94-e8-ae-b0sdk-e7-9a-84-e9-97-ae-e9-a2-98/" data-id="cjkgfzmkw002a72ac27g03m0j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -332,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/01/e7-ac-ac-e4-b8-83-e7-ab-a0-e5-88-86-e6-94-af/" data-id="cjkgf67d1004m26ac026aisxp" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/05/01/e7-ac-ac-e4-b8-83-e7-ab-a0-e5-88-86-e6-94-af/" data-id="cjkgfzmlt004l72accmrzenlh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/25/imagesloaded-js/" data-id="cjkgf67dh005q26achuovhu2a" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/04/25/imagesloaded-js/" data-id="cjkgfzmmc005v72acal075axk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/22/parallax-js/" data-id="cjkgf67du006m26ackxen38ja" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/04/22/parallax-js/" data-id="cjkgfzmmr006n72ac7yteej6p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/19/15-e5-b9-b4-e4-b8-8b-e5-8d-8a-e5-b9-b4-e7-9a-84-e5-b7-a5-e4-bd-9c-e6-80-bb-e7-bb-93/" data-id="cjkgf67b7000g26acgm6fafs2" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/04/19/15-e5-b9-b4-e4-b8-8b-e5-8d-8a-e5-b9-b4-e7-9a-84-e5-b7-a5-e4-bd-9c-e6-80-bb-e7-bb-93/" data-id="cjkgfzmjy000g72ac1sqq8zip" class="article-share-link">Share</a>
       
       
     </footer>
@@ -533,48 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/06/e6-88-91-e4-bb-ac-e5-86-8d-e4-bc-9a/" data-id="cjkgf67ci003f26acwck49rgi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-e4-bd-8e-e4-bb-b7-e7-a7-9f-e5-94-ae-e9-98-bf-e9-87-8c-e4-ba-91-e5-a4-87-e6-a1-88-e5-b9-95-e5-b8-83" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/29/e4-bd-8e-e4-bb-b7-e7-a7-9f-e5-94-ae-e9-98-bf-e9-87-8c-e4-ba-91-e5-a4-87-e6-a1-88-e5-b9-95-e5-b8-83/" class="article-date">
-  <time datetime="2016-03-29T15:38:41.000Z" itemprop="datePublished">2016-03-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/票砸/">票砸</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/e4-bd-8e-e4-bb-b7-e7-a7-9f-e5-94-ae-e9-98-bf-e9-87-8c-e4-ba-91-e5-a4-87-e6-a1-88-e5-b9-95-e5-b8-83/">低价租售阿里云备案幕布</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这几天一直在弄分库，所以之前写的代码要修改一下。以前一直觉得分库是个很牛逼的东西，至少有一定的数据量才应该去分库，跟人吹牛皮的时候，可以说我是“二八”定律里的“二”，意思就是说只有百分之二十的程序员做过分表分库，而我在还没有毕业的时候，就走到了这个“二”的行列里了。 等一下，这话说的有点不对味。 我问在中南读书的某同学，“你作为一个资深系统架构师，你搞过分表分库，那你们是怎么搞这个东西的？”。 他曾经自诩系统架构师，统管多端，曾经成功欺骗一个天真老板，搞垮了几个创业公司。而他的答案也无二致，无非就是根据用户id取模，再逐一进库出库。 另外，想到四月将至，我也应该回学校去做什么鸟什子毕业设计，我一个学工业设计的，按照规划好的套路，应该是建个什么模型，渲染搞一下，然后敷衍几句这个设计如何符合人机工程学，毕业了事。但是很可惜的是，这些我不愿意搞，没什么意思，虽然主要原因不是我不想搞，而是我不会搞。所以，我还是搞代码，美其名曰，交互设计。也算不偏离工业设计太远。 所以我买的域名要备案了，现在我在阿里云购买了一块高价拍照幕布，十五元人民币，现在低价租售给身边要备案的朋友，你们不要的话，我就拿着洗脸了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/29/e4-bd-8e-e4-bb-b7-e7-a7-9f-e5-94-ae-e9-98-bf-e9-87-8c-e4-ba-91-e5-a4-87-e6-a1-88-e5-b9-95-e5-b8-83/" data-id="cjkgf67by002226ackxlw283e" class="article-share-link">Share</a>
+      <a data-url="https://zengxiaoluan.com/2016/04/06/e6-88-91-e4-bb-ac-e5-86-8d-e4-bc-9a/" data-id="cjkgfzmle003g72acxgu2atf9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -588,7 +604,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span>
+    <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -628,7 +644,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
   </div>
 
@@ -639,6 +655,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/05/游泳/">游泳</a>
+          </li>
         
           <li>
             <a href="/2018/06/25/new-home/">new home</a>
@@ -656,10 +676,6 @@
             <a href="/2018/04/03/e7-94-a8mac-e7-9a-84-e6-97-b6-e5-80-99-e6-9c-89-e5-93-aa-e4-ba-9b-e6-93-8d-e4-bd-9c-e8-83-bd-e5-a4-9f-e6-8f-90-e9-ab-98-e6-95-88-e7-8e-87/">用Mac的时候有哪些操作能够提高效率</a>
           </li>
         
-          <li>
-            <a href="/2018/03/30/mac-e8-bd-ac-e6-8d-a2-e8-a7-86-e9-a2-91-e6-a0-bc-e5-bc-8f-e6-96-b9-e6-b3-95/">Mac转换视频格式方法</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -672,7 +688,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2018 Nicole<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
